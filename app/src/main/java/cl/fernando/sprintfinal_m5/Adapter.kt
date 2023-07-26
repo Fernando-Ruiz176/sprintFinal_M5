@@ -11,8 +11,6 @@ class Adapter: RecyclerView.Adapter <Adapter.ViewHolder>() {
     var zapatos = mutableListOf<Zapato>()
     var callback : ZapatoCallback? = null
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
         var binding =ItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent , false)
         return ViewHolder(binding)

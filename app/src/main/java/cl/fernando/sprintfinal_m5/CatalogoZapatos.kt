@@ -45,9 +45,8 @@ class CatalogoZapatos{
             add(Zapato("Botin treking", 67800, "https://static.vecteezy.com/system/resources/previews/014/182/543/non_2x/green-shoe-icon-flat-style-vector.jpg"))
 
         }
+    }*/
+    companion object {
     }
-
-     */
-
 
 }
