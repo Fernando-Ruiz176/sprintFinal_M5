@@ -28,7 +28,8 @@ class Adapter: RecyclerView.Adapter <Adapter.ViewHolder>() {
     }
 
     fun setData(listaZapatos: List<Zapato>){
-        zapatos = listaZapatos.toMutableList()
+        zapatos.clear()
+        zapatos.addAll(listaZapatos)
     }
     inner class ViewHolder (val binding: ItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item:Zapato){

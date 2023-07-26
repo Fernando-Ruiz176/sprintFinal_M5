@@ -3,8 +3,6 @@ package cl.fernando.sprintfinal_m5
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cl.fernando.sprintfinal_m5.databinding.ActivityMainBinding
-import coil.Coil.imageLoader
-import coil.imageLoader
 
 // A. Primera Pantalla (Activitys)
 // [ x ] Crea una pantalla de inicio que muestre una lista de zapatos y zapatillas disponibles para la venta.
@@ -20,6 +18,7 @@ import coil.imageLoader
 class MainActivity : AppCompatActivity(), ZapatoCallback {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var zapatos:MutableList<Zapato>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,9 +29,11 @@ class MainActivity : AppCompatActivity(), ZapatoCallback {
 
     private fun initAdapter() {
         val adapter = Adapter()
-        adapter.setData(CatalogoZapatos.zapatos)
+        val zapatosList = CatalogoZapatos().returnShoeList()
+        adapter.setData(zapatosList)
         adapter.callback = this
         binding.rcLista.adapter = adapter
+
 
 
 
